@@ -1,0 +1,53 @@
+header = container (
+	text "Todos" (top-left, heading-2)
+	button "Sign Out" (top-right) (?)
+)
+text "My Tasks" (h-center, below: container)
+
+[todoText, singOutButton]				-> ordered list
+(top, contents: space-between)		-> set
+
+-> because it's declarative, variable declaration order doesn't matter
+-> if we don't have to reuse an element, we don't need to store it in a variable
+
+-> what is the typical order of arguments?
+   -> group [item1, item2, ...] (styling)
+   -> text "words" (styling)
+
+-> should functions have labelled arguments as below? This would not allow for currying.
+group
+	items: [todoText, signOutButton]
+	visual: (top, contents: space-between)
+button
+	text: "+"
+	action: ()
+
+header = group
+	[todoText, signOutButton]				-> order in here is the (horizontal/vertical) order of the items
+	(top, contents: space-between)
+todoText = text "Todos" (heading-2)		-> double quotes interchangeable with single quotes?
+singOutButton = button "Sign Out" ?action1? ()
+title = text "My Tasks" (h-center, below: header)
+newTask = group [newTaskField, newTaskButton] (h-center, below: title)
+newTaskField = input (rounded-corners, width-large)
+newTaskButton = button "+" ?action2? ()
+group [header, title, newTask] (fixed)
+myself = ???
+items = get todoItems (belongingTo myself) (from storage)
+tasks =
+	map ?action3?
+	after filter ?action?
+	on ?items?
+	(below: newTask)
+action3 item = group [left, deleteButton] (contents: space-between, gap-small)		-> should it be gap-small or small-gap?
+	where
+		checked = checkbox ?action? ()
+		task = text "???" ()
+		deleteButton = button "Delete" ?action? ()
+		left = group [checked, task] ()
+
+
+-> we need to decide if we want to use "below" or just do nesting (like HTML)
+-> maybe "below" is useful as syntactic sugar for grouping? Basically a hidden anonymous group
+
+-> do groups "place" items on the page or simply give common styling to a bunch of items? We want it to be the latter, I think. (Conceptual group, not placement of items.)
