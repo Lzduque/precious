@@ -1,10 +1,14 @@
 ## PRECIOUS
 
 This project was born from one idea: Solve a Problem. What problem? Make computing easy again. That was the original idea that cought our attention when watching Joe's Armstrong presentation "The Forgotten Ideas in Computer Science - Code BEAM SF 2018".
+
 After years of exprience acumulated between both of us in the industry, we could easily relate to this.
 We were also not among the first developers to discover this problem. Many tried over the years to create frameworks en DSLs to try and unify at least some of the functions of a web app:
+
 "Most Web applications are based on a conventional three tier architecture, in which the presentation, application logic, and data management are developed and maintained in separate tiers. The main disadvantage of this architecture is that it requires expertise in multiple programming languages, programming paradigms, and data models used in each tier. A single expert rarely masters all the technologies and concepts involved."
+
 "Unifying the client side (presentation tier) and server side (logic and data tiers) programming under a single model can simplify the Web application development and particularly reduce the skill set required from a developer. Reducing the number of technologies involved also makes an application more secure, as in general each technology is one more compromise in the overall application security. Generally, a unified model can be based on either server side or client side concepts."
+
 Markku Laine, Denis Shestakov, Petri Vuorimaa - XForms DB: An Extensible Web Application Framework Built upon Declarative W3C Standards
 After a lot of research we decided to aproach the problem by developing our own tool: our very own [DSL](https://en.wikipedia.org/wiki/Domain-specific_language).
 
