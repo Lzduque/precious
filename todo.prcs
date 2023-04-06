@@ -1,0 +1,44 @@
+main = 
+	signIn ?
+		group
+			[header, body]
+		group
+			[srfgsfe]
+
+main = 
+	signIn ?
+		group
+			[header, body]
+		somethingElse ?
+			group
+				[srfgsfe]
+			group
+				[sefsecf,.secfes]
+
+-> do we need a ternary logic? NO. One of our philosophies is not to have many ways of writting the same thing. So we just need something similar to guards.
+
+main = 
+	signedIn ?
+		group
+			[header, body]
+			(ercwe,ecraesr)
+	default ?
+		group
+			[header, body]
+			(ercwe,ecraesr)
+
+main = 
+	| signedIn =
+		group
+			[register, separator, signIn]
+			(default vertical, v-center, h-center, space: 3rem??)
+			(default vertical: (v-center, h-left), 
+			lgScreen horizontal: (v-center, h-center))
+			(fixed vertical, )
+			(vertical/horizontal, )
+	| default =
+		group
+			[header, body]
+			(ercwe,ecraesr)
+
+-> how to style the responsive design -> there is a default behaviour but the user should be able to choose the desired behaviour, some things as going to be displayed differently, some won't be there.
